@@ -701,6 +701,7 @@ public class TraPhong extends javax.swing.JFrame {
         PhiPhong = hoaDonDao.getPhiPhong(txtMaPhong.getText());
         txtPhiPhong.setText(format.format(PhiPhong) + "");
         trangThaiHd = hoaDonDao.getTrangThai(pUpdate.getMaHD());
+        txtTongPhi.setText(pUpdate.getThanhTien()+"");
 
         if (trangThaiHd == 0) {
             btnTraPhong.setEnabled(true);
