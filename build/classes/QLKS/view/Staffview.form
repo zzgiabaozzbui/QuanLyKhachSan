@@ -463,15 +463,13 @@
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtNgaySinh" min="-2" pref="287" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="rdoNam" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                       <Component id="rdoNu" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtNgaySinh" pref="287" max="32767" attributes="0"/>
-                                      <Component id="cboBP" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="cboBP" min="-2" pref="287" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -491,7 +489,7 @@
                               <Component id="txtemail" min="-2" pref="287" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                      <EmptySpace pref="45" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -515,10 +513,15 @@
                       </Group>
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel5" max="32767" attributes="0"/>
-                          <Component id="txtNgaySinh" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel5" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="txtNgaySinh" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel6" alignment="3" max="32767" attributes="0"/>
                           <Component id="rdoNam" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -742,11 +745,6 @@
                 <Property name="opaque" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="com.toedter.calendar.JDateChooser" name="txtNgaySinh">
-              <Properties>
-                <Property name="dateFormatString" type="java.lang.String" value="yyyy/MM/dd"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JComboBox" name="cboBP">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -756,6 +754,11 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;bophan&gt;"/>
               </AuxValues>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="txtNgaySinh">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="yyyy/MM/dd"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
