@@ -5,6 +5,7 @@
  */
 package QLKS.UI;
 
+import QLKS.Login.login;
 import QLKS.controller.ThongTinPhongDao;
 import QLKS.model.Phong;
 import java.util.List;
@@ -483,7 +484,8 @@ public class ThongTinPhong extends javax.swing.JFrame {
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
         int anw = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn thoát không!", "Cảnh báo!", JOptionPane.YES_NO_OPTION);
         if (anw == 0) {
-            System.exit(0);
+            this.dispose();
+            login.h.setVisible(true);
         }
     }//GEN-LAST:event_btnThoatActionPerformed
 

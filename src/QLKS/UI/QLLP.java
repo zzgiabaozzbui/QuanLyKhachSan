@@ -6,6 +6,7 @@
 package QLKS.UI;
 
 
+import QLKS.Login.login;
 import QLKS.controller.LoaiPhongDao;
 import QLKS.model.LoaiPhong;
 import java.awt.Font;
@@ -73,6 +74,7 @@ public class QLLP extends javax.swing.JFrame {
         btnSearch = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         btnRefresh = new javax.swing.JButton();
+        btnThoat = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -121,6 +123,17 @@ public class QLLP extends javax.swing.JFrame {
             }
         });
 
+        btnThoat.setBackground(new java.awt.Color(0, 153, 255));
+        btnThoat.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
+        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Image/Windows-Close-Program-icon.png"))); // NOI18N
+        btnThoat.setText("Thoát");
+        btnThoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThoatActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -141,7 +154,9 @@ public class QLLP extends javax.swing.JFrame {
                         .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(67, 67, 67)
                         .addComponent(btnRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(300, 300, 300)))
+                        .addGap(39, 39, 39)
+                        .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)))
                 .addGap(30, 30, 30))
         );
         jPanel5Layout.setVerticalGroup(
@@ -155,6 +170,7 @@ public class QLLP extends javax.swing.JFrame {
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnThoat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnRefresh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
@@ -424,6 +440,14 @@ public class QLLP extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnChiTietActionPerformed
 
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+        int anw = JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn thoát không!", "Cảnh báo!", JOptionPane.YES_NO_OPTION);
+        if (anw == 0) {
+            this.dispose();
+            login.h.setVisible(true);
+        }
+    }//GEN-LAST:event_btnThoatActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -465,6 +489,7 @@ public class QLLP extends javax.swing.JFrame {
     private javax.swing.JButton btnChiTiet;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnThoat;
     private javax.swing.JComboBox<String> cboSearch;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

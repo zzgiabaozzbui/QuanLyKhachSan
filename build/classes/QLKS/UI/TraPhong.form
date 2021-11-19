@@ -64,7 +64,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="13" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -247,12 +247,10 @@
                               <Component id="dateNgayDatPhong" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
                               <Component id="dateNgayNhanPhong" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
                               <Component id="dateNgayTraPhong" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="txtTenPhong" alignment="0" pref="153" max="32767" attributes="0"/>
-                                  <Component id="txtMaPhong" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtIDDatPhong" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtMaHD" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="txtTenPhong" alignment="0" pref="295" max="32767" attributes="0"/>
+                              <Component id="txtMaPhong" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtIDDatPhong" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtMaHD" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="txtSoNg" alignment="0" max="32767" attributes="0"/>
@@ -268,15 +266,14 @@
                               </Group>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                          <Component id="btnTraPhong" min="-2" pref="130" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                          <Component id="btnThoat" min="-2" pref="124" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                  <Component id="btnTraPhong" min="-2" pref="130" max="-2" attributes="0"/>
-                  <EmptySpace pref="92" max="32767" attributes="0"/>
-                  <Component id="btnThoat" min="-2" pref="121" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -375,8 +372,8 @@
                   </Group>
                   <EmptySpace pref="61" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnThoat" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                       <Component id="btnTraPhong" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="btnThoat" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
               </Group>
@@ -593,6 +590,17 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTraPhongActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="15" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="VND"/>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JButton" name="btnThoat">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -612,17 +620,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThoatActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="15" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="VND"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

@@ -1,5 +1,6 @@
 package QLKS.UI;
 
+import QLKS.Login.login;
 import QLKS.controller.DatPhongDao;
 import QLKS.model.Datphong;
 import QLKS.controller.ThongTinPhongDao;
@@ -148,13 +149,13 @@ ThuePhongDao thuePhongDao = new ThuePhongDao();
         btnSua = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
         btnReSet = new javax.swing.JButton();
-        btnThoat = new javax.swing.JButton();
         cboMaNV = new javax.swing.JComboBox<>();
         cboMaKH = new javax.swing.JComboBox<>();
         dateNgayDatPhong = new javax.swing.JSpinner();
         jLabel10 = new javax.swing.JLabel();
         dateNgaySinh1 = new javax.swing.JSpinner();
         jLabel11 = new javax.swing.JLabel();
+        btnThoat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -357,17 +358,6 @@ ThuePhongDao thuePhongDao = new ThuePhongDao();
             }
         });
 
-        btnThoat.setBackground(new java.awt.Color(0, 153, 255));
-        btnThoat.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
-        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Image/Windows-Close-Program-icon.png"))); // NOI18N
-        btnThoat.setText("Thoát");
-        btnThoat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnThoatActionPerformed(evt);
-            }
-        });
-
         cboMaNV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboMaNVActionPerformed(evt);
@@ -397,6 +387,17 @@ ThuePhongDao thuePhongDao = new ThuePhongDao();
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 0, 0));
         jLabel11.setText("VND");
+
+        btnThoat.setBackground(new java.awt.Color(0, 153, 255));
+        btnThoat.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
+        btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Image/Windows-Close-Program-icon.png"))); // NOI18N
+        btnThoat.setText("Thoát");
+        btnThoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThoatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -431,10 +432,9 @@ ThuePhongDao thuePhongDao = new ThuePhongDao();
                         .addGap(18, 18, 18)
                         .addComponent(txtTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(dateNgaySinh1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtMaPhong)
-                        .addComponent(txtIDDatPhong, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                        .addComponent(txtTenPhong))
+                    .addComponent(txtMaPhong)
+                    .addComponent(txtIDDatPhong)
+                    .addComponent(txtTenPhong)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtSoNg, javax.swing.GroupLayout.Alignment.LEADING)
@@ -458,9 +458,9 @@ ThuePhongDao thuePhongDao = new ThuePhongDao();
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnReSet, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(104, 104, 104))
+                .addGap(69, 69, 69)
+                .addComponent(btnThoat)
+                .addGap(113, 113, 113))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -514,10 +514,10 @@ ThuePhongDao thuePhongDao = new ThuePhongDao();
                     .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnReSet, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -727,13 +727,6 @@ ThuePhongDao thuePhongDao = new ThuePhongDao();
                 btnXoa.setEnabled(true);
     }//GEN-LAST:event_tblDatPhongMouseClicked
 
-    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
-        int anw =JOptionPane.showConfirmDialog(rootPane, "Bạn có muốn thoát không!", "Cảnh báo!", JOptionPane.YES_NO_OPTION);
-            if(anw == 0){
-            System.exit(0);
-            }
-    }//GEN-LAST:event_btnThoatActionPerformed
-
     private void btnReSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReSetActionPerformed
        Clear();
     }//GEN-LAST:event_btnReSetActionPerformed
@@ -765,6 +758,12 @@ ThuePhongDao thuePhongDao = new ThuePhongDao();
         tblThongTinPhong.setModel(model);
         }
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+
+        this.dispose();
+        login.h.setVisible(true);
+    }//GEN-LAST:event_btnThoatActionPerformed
 
     /**
      * @param args the command line arguments
