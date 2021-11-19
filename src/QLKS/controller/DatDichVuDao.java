@@ -366,7 +366,7 @@ public  class DatDichVuDao implements Dao<DatDichVu>{
                  
                  ddv.setMaDV(rs.getString("MaDV"));
                
-                 ddv.setSoLuong(rs.getInt("SoLuong"));
+                 ddv.setThanhTien(rs.getFloat("TongDat"));
                 
                  listDDV.add(ddv);
              }

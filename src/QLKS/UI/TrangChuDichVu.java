@@ -89,11 +89,11 @@ public class TrangChuDichVu extends javax.swing.JFrame {
        
         List<DatDichVu> listDDV=new ArrayList<DatDichVu>();
        
-        listDDV=ddvd.getList();
+        listDDV=ddvd.getBieuDo();
         
         DefaultPieDataset dataset = new DefaultPieDataset();
         for (DatDichVu ddv : listDDV) {
-            dataset.setValue("Dịch vụ:"+ddvd.getData(ddv.getMaDV(), "MaDV"), ddv.getSoLuong());
+            dataset.setValue("Dịch vụ:"+ddvd.getData(ddv.getMaDV(), "MaDV"), ddv.getThanhTien());
         }
            
         return dataset;
