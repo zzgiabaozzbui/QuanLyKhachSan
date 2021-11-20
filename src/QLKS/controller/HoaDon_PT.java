@@ -52,7 +52,7 @@ public class HoaDon_PT implements Dao<HoaDon>{
                 double thanhTien= rs.getDouble(THANHTIEN);
                 int trangThai=rs.getInt(TRANGTHAI);
                 String idDatPhong=rs.getString("ID_DatPhong");
-                list.add(new HoaDon(maHD,MaKH,idDatPhong,ngayLapHD,thanhTien,trangThai));
+                list.add(new HoaDon(maHD,MaKH,idDatPhong,ngayLapHD,thanhTien,trangThai,1));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -83,7 +83,7 @@ public class HoaDon_PT implements Dao<HoaDon>{
     public Optional<HoaDon> get(String id) {
         HoaDon Hd = new HoaDon();
         try {
-            String querySelect="Select mahd,makh,"
+            String querySelect="Select mahd,makh,ID_DatPhong,"
                     + "ngaylaphd, thanhtien, trangthai from "+TABLE_NAME
                     +" where "+MAHD+"='"+id+"'";
             
@@ -97,7 +97,9 @@ public class HoaDon_PT implements Dao<HoaDon>{
                 Hd.setNgayLapHD(rs.getDate(NGAYLAPHD));
                 Hd.setThanhTien(rs.getDouble(THANHTIEN));
                 Hd.setTrangThai(rs.getInt(TRANGTHAI));
+                Hd.setID_DatPhong(rs.getString("ID_DatPhong"));
             }
+            
         } catch (Exception e) {
         }
         return Optional.of(Hd); 
@@ -182,7 +184,7 @@ public class HoaDon_PT implements Dao<HoaDon>{
     public List<HoaDon> find(HoaDon t) {
         List<HoaDon> list = new ArrayList<>();
         try {
-            String querySelect="Select hd.makh,ID_DatPhong, mahd,,tenkh,"
+            String querySelect="Select hd.makh,ID_DatPhong, mahd,tenkh,"
                     + "ngaylaphd, thanhtien, trangthai from "+TABLE_NAME 
                     +" hd INNER JOIN khachhang on hd.MaKH=khachhang.MaKH where hd.mahd like  '%"+t.getMaHD()+"%' or"
                     + " hd.makh like '%"+t.getMaKH()+"%' or tenkh like '%"+t.getMaHD()+"%'";
@@ -246,7 +248,7 @@ public class HoaDon_PT implements Dao<HoaDon>{
             int k=ps.executeUpdate();          
     }
     public double getPhiPhong(String MaPhong) {
-       float PhiPhong = 0 ;
+       double PhiPhong = 0 ;
         try {
 
             String sql_select = "select lp.GiaPhong from Phong p\n" +
@@ -257,7 +259,8 @@ public class HoaDon_PT implements Dao<HoaDon>{
             ResultSet rs = ps.executeQuery(sql_select);
             System.out.println(ps);
             while (rs.next()) {
-                PhiPhong = rs.getFloat("GiaPhong");
+                PhiPhong = rs.getDouble("GiaPhong");
+                System.out.println(PhiPhong);
             }
         } catch (Exception e) {
             e.printStackTrace();

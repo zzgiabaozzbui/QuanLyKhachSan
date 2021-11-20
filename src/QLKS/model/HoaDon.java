@@ -46,6 +46,14 @@ public class HoaDon {
         this.thanhTien = thanhTien;
         this.trangThai = trangThai;
     }
+    public HoaDon(String MaHD, String MaKH, String ID_DatPhong, Date ngayLapHD, double thanhTien, int trangThai,int s) {
+        this.MaHD = MaHD;
+        this.MaKH = MaKH;
+        this.ngayLapHD = ngayLapHD;
+        this.thanhTien = thanhTien;
+        this.trangThai = trangThai;
+        this.ID_DatPhong = ID_DatPhong;
+    }
     public HoaDon(String MaHD, String MaKH, Date ngayLapHD, int trangThai, String ID_DatPhong, String MaPhong, String MaNV, Date NgayNhanPhong, Date NgayTraPhong, float DatCoc, int SoNguoi, Date NgayDatPhong) {
         this.MaHD = MaHD;
         this.MaKH = MaKH;
