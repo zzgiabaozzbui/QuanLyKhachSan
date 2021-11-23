@@ -10,6 +10,7 @@ import QLKS.Home.Home;
 import QLKS.Home.pnLeft;
 import QLKS.Login.login;
 import QLKS.controller.StaffDao;
+import QLKS.controller.Xuatexcel;
 import QLKS.controller.bophanDao;
 import QLKS.model.bophan;
 import QLKS.model.staff;
@@ -285,6 +286,11 @@ public class Staffview extends javax.swing.JFrame {
         btnExcel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnExcel.setText("Xuất excel");
         btnExcel.setBorder(null);
+        btnExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcelActionPerformed(evt);
+            }
+        });
 
         lblerro.setFont(new java.awt.Font("Tahoma", 3, 13)); // NOI18N
         lblerro.setForeground(new java.awt.Color(255, 0, 0));
@@ -617,7 +623,7 @@ public class Staffview extends javax.swing.JFrame {
                 .addComponent(pnBorder4, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(pnBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnBorder3, javax.swing.GroupLayout.PREFERRED_SIZE, 995, Short.MAX_VALUE)
+                    .addComponent(pnBorder3, javax.swing.GroupLayout.PREFERRED_SIZE, 996, Short.MAX_VALUE)
                     .addComponent(pnBorder2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnBorder5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -850,6 +856,10 @@ public class Staffview extends javax.swing.JFrame {
     private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchActionPerformed
+
+    private void btnExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelActionPerformed
+        new Xuatexcel().excel(tblNV, "NHÂN VIÊN", "nv");
+    }//GEN-LAST:event_btnExcelActionPerformed
 
     
     /**
