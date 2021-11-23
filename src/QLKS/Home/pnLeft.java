@@ -28,6 +28,10 @@ import QLKS.UI.ThongTinPhong;
 import QLKS.UI.ThuePhong;
 import QLKS.UI.TraPhong;
 import QLKS.UI.TrangChuDichVu;
+import QLKS.controller.StaffDao;
+import QLKS.controller.userDao;
+import QLKS.model.staff;
+import QLKS.util.PropertiesNVNow;
 import QLKS.view.ChiTietHoaDon;
 import QLKS.view.Customview;
 import QLKS.view.Staffview;
@@ -52,6 +56,19 @@ public class pnLeft extends javax.swing.JPanel {
         initComponents();
         setOpaque(false);
         HideMenu();
+    }
+    public void PQ(){
+        String ma =  new PropertiesNVNow().getRemember().get(0);
+        System.out.println(new userDao().PQ(ma));
+        int st = new userDao().PQ(ma);
+        if(st==1){
+        //Amin
+        }else if(st==2){
+        //quan ly
+        }else if(st==3){
+        //nhân viên
+        }
+    
     }
     
     /**
