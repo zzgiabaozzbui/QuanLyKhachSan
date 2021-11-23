@@ -946,7 +946,7 @@ public class Staffview extends javax.swing.JFrame {
         List<staff> lisstaff = staffdao.getAll();
         for (staff p : lisstaff) {
 
-            dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), p.getGioiTinh(), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
+            dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), staffdao.doiGT(String.valueOf(p.getGioiTinh())), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
             dtmDanhSach.addRow(dataRow);
         }
 
@@ -978,13 +978,13 @@ public class Staffview extends javax.swing.JFrame {
                         if(c.getMaBP().equals("-1000")){
                             List<staff> lisst = staffdao.getAll();
                             for (staff p : lisst) {
-                                dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), p.getGioiTinh(), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
+                                dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), staffdao.doiGT(String.valueOf(p.getGioiTinh())), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
                                 dtmDanhSach.addRow(dataRow);
                             }
                         }else{
                             List<staff> lisst = staffdao.get(c);
                             for (staff p : lisst) {
-                                dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), p.getGioiTinh(), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
+                                dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), staffdao.doiGT(String.valueOf(p.getGioiTinh())), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
                                 dtmDanhSach.addRow(dataRow);
                             }
                             
@@ -1004,7 +1004,7 @@ public class Staffview extends javax.swing.JFrame {
         List<staff> lisstaff = staffdao.getAll(key);
         for (staff p : lisstaff) {
 
-            dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), p.getGioiTinh(), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
+            dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(),staffdao.doiGT(String.valueOf(p.getGioiTinh())), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
             dtmDanhSach.addRow(dataRow);
         }
 
@@ -1036,13 +1036,13 @@ public class Staffview extends javax.swing.JFrame {
                         if(c.getMaBP().equals("-1000")){
                             List<staff> lisst = staffdao.getAll();
                             for (staff p : lisst) {
-                                dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), p.getGioiTinh(), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
+                                dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), staffdao.doiGT(String.valueOf(p.getGioiTinh())), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
                                 dtmDanhSach.addRow(dataRow);
                             }
                         }else{
                             List<staff> lisst = staffdao.get(c);
                             for (staff p : lisst) {
-                                dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), p.getGioiTinh(), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
+                                dataRow = new Object[]{p.getMaNV(), p.getMaBP(), p.getTenNV(), p.getNgaySinh(), staffdao.doiGT(String.valueOf(p.getGioiTinh())), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
                                 dtmDanhSach.addRow(dataRow);
                             }
                             

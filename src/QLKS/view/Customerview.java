@@ -9,6 +9,7 @@ import QLKS.Home.Home;
 import QLKS.Home.pnLeft;
 import QLKS.Login.login;
 import QLKS.controller.CustomerDao;
+import QLKS.controller.StaffDao;
 import QLKS.controller.bophanDao;
 import QLKS.model.bophan;
 import QLKS.model.customer;
@@ -766,6 +767,7 @@ public class Customerview extends javax.swing.JFrame {
     private DefaultListModel<bophan> dlmBP;
     public static SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
     private bophanDao std = new bophanDao();
+    private StaffDao staffdao = new StaffDao();
     
     //Load dữ liệu vào bảng
     DefaultTableModel dtmDanhSach;
@@ -778,7 +780,7 @@ public class Customerview extends javax.swing.JFrame {
         List<customer> liscustomer = customerdao.getAll();
         for (customer p : liscustomer) {
 
-            dataRow = new Object[]{p.getMaKH(),  p.getTenKH(), p.getNgaySinh(), p.getGioiTinh(), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
+            dataRow = new Object[]{p.getMaKH(),  p.getTenKH(), p.getNgaySinh(), staffdao.doiGT(String.valueOf(p.getGioiTinh())), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
             dtmDanhSach.addRow(dataRow);
         }
 
@@ -804,7 +806,7 @@ public class Customerview extends javax.swing.JFrame {
         List<customer> liscustomer = customerdao.getAll(key);
         for (customer p : liscustomer) {
 
-            dataRow = new Object[]{p.getMaKH(), p.getTenKH(), p.getNgaySinh(), p.getGioiTinh(), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
+            dataRow = new Object[]{p.getMaKH(), p.getTenKH(), p.getNgaySinh(), staffdao.doiGT(String.valueOf(p.getGioiTinh())), p.getSdt(), p.getCmnd(), p.getEmail(), p.getDiachi()};
             dtmDanhSach.addRow(dataRow);
         }
 

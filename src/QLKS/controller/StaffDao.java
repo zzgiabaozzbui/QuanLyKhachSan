@@ -60,6 +60,13 @@ public class StaffDao implements Dao<staff>{
         return list;
     }
 
+    public String doiGT(String tt){
+        if (tt.equals("0")) {
+            return "Nữ";
+        } else {
+            return "Nam";
+        }
+    }
     public int getCount(String bp) {
         int so = 0;
         try {
