@@ -29,7 +29,7 @@ import QLKS.UI.ThuePhong;
 import QLKS.UI.TraPhong;
 import QLKS.UI.TrangChuDichVu;
 import QLKS.view.ChiTietHoaDon;
-import QLKS.view.Customerview;
+import QLKS.view.Customview;
 import QLKS.view.Staffview;
 import QLKS.view.TaiKhoanview;
 import QLKS.view.frPhuThu;
@@ -761,7 +761,7 @@ public class pnLeft extends javax.swing.JPanel {
 
     private void btnQLKHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQLKHMouseClicked
         h.dispose();
-        new Customerview().setVisible(true);
+        new Customview().setVisible(true);
     }//GEN-LAST:event_btnQLKHMouseClicked
 
     private void btnHDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHDMouseClicked
