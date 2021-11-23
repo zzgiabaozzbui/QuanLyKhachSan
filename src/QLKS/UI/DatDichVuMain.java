@@ -9,10 +9,16 @@ import QLKS.controller.DatDichVuDao;
 import QLKS.model.DatDichVu;
 import java.awt.CardLayout;
 import java.awt.Font;
+import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -102,6 +108,7 @@ public class DatDichVuMain extends javax.swing.JPanel {
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnInfo = new javax.swing.JButton();
+        btnExcel = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1112, 628));
 
@@ -274,12 +281,24 @@ public class DatDichVuMain extends javax.swing.JPanel {
             }
         });
 
+        btnExcel.setBackground(new java.awt.Color(51, 255, 51));
+        btnExcel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/QLKS/Image/baseline_add_black_24dp.png"))); // NOI18N
+        btnExcel.setText("Xuất Excel");
+        btnExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(284, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -297,7 +316,8 @@ public class DatDichVuMain extends javax.swing.JPanel {
                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -446,10 +466,90 @@ public class DatDichVuMain extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnInfoActionPerformed
 
+    private void btnExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelActionPerformed
+       try {
+        XSSFWorkbook workbook=new XSSFWorkbook();
+        XSSFSheet sheet=workbook.createSheet("Đặt dịch vụ");
+        XSSFRow row=null;
+           Cell cell=null;
+           row=sheet.createRow(3);
+           
+           cell=row.createCell(0, CellType.STRING);
+           cell.setCellValue("Mã hóa đơn đặt dịch vụ");
+           
+           cell=row.createCell(1, CellType.STRING);
+           cell.setCellValue("Tên dịch vụ");
+           
+           cell=row.createCell(2, CellType.STRING);
+           cell.setCellValue("Tên khách hàng");
+           
+           cell=row.createCell(3, CellType.STRING);
+           cell.setCellValue("Tên nhân viên");
+           
+           cell=row.createCell(4, CellType.STRING);
+           cell.setCellValue("Thời gian đặt");
+           
+           cell=row.createCell(5, CellType.STRING);
+           cell.setCellValue("Thời gian bắt đầu");
+           
+           cell=row.createCell(6, CellType.NUMERIC);
+           cell.setCellValue("Sô lượng dịch vụ");
+           
+           cell=row.createCell(7, CellType.NUMERIC);
+           cell.setCellValue("Thành tiền");
+           
+           cell=row.createCell(8, CellType.STRING);
+           cell.setCellValue("Ghi chú");
+           
+           
+            DatDichVu ddv;
+           for (int i = 0; i < ddvd.getList().size(); i++) {
+            ddv=ddvd.getList().get(i);
+            row=sheet.createRow(4+i);
+            
+            cell=row.createCell(0, CellType.STRING);
+            cell.setCellValue(ddv.getMaHDDV());
+            
+            cell=row.createCell(1, CellType.STRING);
+            cell.setCellValue(ddvd.getData(ddv.getMaDV(),"MaDV"));
+            
+            cell=row.createCell(2, CellType.STRING);
+            cell.setCellValue(ddvd.getData(ddv.getMaKH(),"MaKH"));
+            
+            cell=row.createCell(3, CellType.STRING);
+            cell.setCellValue(ddvd.getData(ddv.getMaNV(),"MaNV"));
+            
+            cell=row.createCell(4, CellType.STRING);
+            cell.setCellValue(formatter.format(ddv.getThoiGianDat()));
+            
+            cell=row.createCell(5, CellType.STRING);
+            cell.setCellValue(formatter.format(ddv.getThoiGianBatDauSDDV()));
+            
+            cell=row.createCell(6, CellType.NUMERIC);
+            cell.setCellValue(ddv.getSoLuong());
+            
+            cell=row.createCell(7, CellType.NUMERIC);
+            cell.setCellValue(ddv.getThanhTien());
+            
+            cell=row.createCell(8, CellType.STRING);
+            cell.setCellValue(ddv.getGhiChu());
+            
+       
+        }
+        
+            FileOutputStream fos=new FileOutputStream("D:/DatDichVu.xlsx");
+            workbook.write(fos);
+            fos.close();
+            } catch (Exception e) {
+           e.printStackTrace();
+        }
+    }//GEN-LAST:event_btnExcelActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnExcel;
     private javax.swing.JButton btnInfo;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSearch;
