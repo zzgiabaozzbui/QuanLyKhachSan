@@ -54,19 +54,101 @@ public class pnLeft extends javax.swing.JPanel {
      */
     public pnLeft() {
         initComponents();
+        PQ();
+        setSize(370, 1080);
         setOpaque(false);
         HideMenu();
     }
     public void PQ(){
         String ma =  new PropertiesNVNow().getRemember().get(0);
-        System.out.println(new userDao().PQ(ma));
         int st = new userDao().PQ(ma);
         if(st==1){
         //Amin
+        btnTK.setVisible(true);
+        btnQLTK.setVisible(true);
+        btnDangXuat.setVisible(true);
+        
+        btnQL.setVisible(true);
+        btnQLKH.setVisible(true);
+        btnQLNV.setVisible(true);
+        btnQLLP.setVisible(true);
+        btnQLP.setVisible(true);
+        
+        btnDV.setVisible(true);
+        
+        btnHD.setVisible(true);
+        
+        btnSP.setVisible(true);
+        btnQLPT.setVisible(true);
+        btnQLSP.setVisible(true);
+        btnQLNK.setVisible(true);
+        
+        btnP.setVisible(true);
+        btnDP.setVisible(true);
+        btnTP.setVisible(true);
+        btnTraPhong.setVisible(true);
+                
+        btnThK.setVisible(false);
+        btnThongKeNK.setVisible(false);
+        btnThongKeTN.setVisible(false);
         }else if(st==2){
         //quan ly
+        btnTK.setVisible(true);
+        btnQLTK.setVisible(false);
+        btnDangXuat.setVisible(true);
+        
+        btnQL.setVisible(true);
+        btnQLKH.setVisible(false);
+        btnQLNV.setVisible(false);
+        btnQLLP.setVisible(true);
+        btnQLP.setVisible(false);
+        
+        btnDV.setVisible(true);
+        
+        btnHD.setVisible(false);
+        
+        btnSP.setVisible(true);
+        btnQLPT.setVisible(true);
+        btnQLSP.setVisible(false);
+        btnQLNK.setVisible(true);
+        
+        btnP.setVisible(false);
+        btnDP.setVisible(true);
+        btnTP.setVisible(true);
+        btnTraPhong.setVisible(true);
+                
+        btnThK.setVisible(false);
+        btnThongKeNK.setVisible(false);
+        btnThongKeTN.setVisible(false);
         }else if(st==3){
         //nhân viên
+        btnTK.setVisible(true);
+        btnQLTK.setVisible(false);
+        btnDangXuat.setVisible(true);
+        
+        btnQL.setVisible(true);
+        btnQLKH.setVisible(true);
+        btnQLNV.setVisible(false);
+        btnQLLP.setVisible(false);
+        btnQLP.setVisible(true);
+        
+        btnDV.setVisible(true);
+        
+        btnHD.setVisible(false);
+        
+        btnSP.setVisible(false);
+        btnQLPT.setVisible(true);
+        btnQLSP.setVisible(false);
+        btnQLNK.setVisible(true);
+        
+        btnP.setVisible(true);
+        btnDP.setVisible(true);
+        btnTP.setVisible(true);
+        btnTraPhong.setVisible(true);
+                
+        btnThK.setVisible(false);
+        btnThongKeNK.setVisible(false);
+        btnThongKeTN.setVisible(false);
         }
     
     }
@@ -86,7 +168,6 @@ public class pnLeft extends javax.swing.JPanel {
         jPanel11 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         pnTK = new javax.swing.JPanel();
-        btnDoiMK = new javax.swing.JLabel();
         btnDangXuat = new javax.swing.JLabel();
         btnQLTK = new javax.swing.JLabel();
         btnQL = new javax.swing.JLabel();
@@ -134,13 +215,13 @@ public class pnLeft extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(74, 74, 74)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(jLabel2)))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,14 +238,6 @@ public class pnLeft extends javax.swing.JPanel {
         jPanel4.setOpaque(false);
 
         pnTK.setOpaque(false);
-
-        btnDoiMK.setBackground(new java.awt.Color(255, 255, 255));
-        btnDoiMK.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        btnDoiMK.setForeground(new java.awt.Color(255, 255, 255));
-        btnDoiMK.setText("            Đổi mật khẩu");
-        btnDoiMK.setMaximumSize(new java.awt.Dimension(150, 28));
-        btnDoiMK.setMinimumSize(new java.awt.Dimension(150, 28));
-        btnDoiMK.setPreferredSize(new java.awt.Dimension(150, 28));
 
         btnDangXuat.setBackground(new java.awt.Color(255, 255, 255));
         btnDangXuat.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -197,17 +270,15 @@ public class pnLeft extends javax.swing.JPanel {
         pnTKLayout.setHorizontalGroup(
             pnTKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnQLTK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnDoiMK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnDangXuat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnTKLayout.setVerticalGroup(
             pnTKLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnTKLayout.createSequentialGroup()
                 .addComponent(btnQLTK, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnDoiMK, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8))
         );
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -601,11 +672,11 @@ public class pnLeft extends javax.swing.JPanel {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnTK, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnTK, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
             .addComponent(btnQL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnQL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnThK, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
+            .addComponent(btnThK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnTT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnThK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -643,9 +714,9 @@ public class pnLeft extends javax.swing.JPanel {
                 .addComponent(pnThK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(btnTT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -666,9 +737,8 @@ public class pnLeft extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 33, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -738,16 +808,6 @@ public class pnLeft extends javax.swing.JPanel {
         h.dispose();
         new Staffview().setVisible(true);
     }//GEN-LAST:event_btnQLNVMouseClicked
-
-    private void btnQLTKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQLTKMouseClicked
-        h.dispose();
-        new TaiKhoanview().setVisible(true);
-    }//GEN-LAST:event_btnQLTKMouseClicked
-
-    private void btnDangXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDangXuatMouseClicked
-        h.dispose();
-        new login().setVisible(true);
-    }//GEN-LAST:event_btnDangXuatMouseClicked
 
     private void btnExitKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnExitKeyTyped
         // TODO add your handling code here:
@@ -844,6 +904,16 @@ public class pnLeft extends javax.swing.JPanel {
         new TraPhong().setVisible(true);
     }//GEN-LAST:event_btnTraPhongMouseClicked
 
+    private void btnQLTKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQLTKMouseClicked
+        h.dispose();
+        new TaiKhoanview().setVisible(true);
+    }//GEN-LAST:event_btnQLTKMouseClicked
+
+    private void btnDangXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDangXuatMouseClicked
+        h.dispose();
+        new login().setVisible(true);
+    }//GEN-LAST:event_btnDangXuatMouseClicked
+
      @Override
     protected void paintComponent(Graphics grp){
         Graphics2D g2 =(Graphics2D) grp;
@@ -932,7 +1002,6 @@ public class pnLeft extends javax.swing.JPanel {
     private javax.swing.JLabel btnDP;
     private javax.swing.JLabel btnDV;
     private javax.swing.JLabel btnDangXuat;
-    private javax.swing.JLabel btnDoiMK;
     private javax.swing.JLabel btnExit;
     private javax.swing.JLabel btnHD;
     private javax.swing.JLabel btnP;

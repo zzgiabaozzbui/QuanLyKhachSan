@@ -119,11 +119,25 @@ public class userDao implements Dao<taikhoan>{
     public int PQ(String ma) {
         int so = 0;
         try {
-            String sql_select = "SELECT PhanQuyen FROM dangnhap WHERE PhanQuyen = '"+ma+"'";
+            String sql_select = "SELECT PhanQuyen FROM dangnhap WHERE MaNV = '"+ma+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
                 so = rs.getInt("PhanQuyen");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return so;
+    }
+    public int TT(String ma) {
+        int so = 0;
+        try {
+            String sql_select = "SELECT TrangThai FROM dangnhap WHERE TaiKhoan = '"+ma+"'";
+            PreparedStatement ps = conn.prepareStatement(sql_select);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {     
+                so = rs.getInt("TrangThai");
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -2,15 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< Updated upstream
         <group>
-            <file>file:/C:/Users/BVCN%2088/Documents/GitHub/QuanLyKhachSan/src/QLKS/view/ChiTietHoaDon.java</file>
-            <file>file:/C:/Users/BVCN%2088/Documents/GitHub/QuanLyKhachSan/src/QLKS/view/frPhuThu.java</file>
-            <file>file:/C:/Users/BVCN%2088/Documents/GitHub/QuanLyKhachSan/src/QLKS/view/frSanPham.java</file>
-            <file>file:/C:/Users/BVCN%2088/Documents/GitHub/QuanLyKhachSan/src/QLKS/controller/Xuatexcel.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/github/QuanLyKhachSan/resources/Nv_Now.properties</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/github/QuanLyKhachSan/src/QLKS/controller/StaffDao.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/github/QuanLyKhachSan/src/QLKS/Home/pnLeft.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/github/QuanLyKhachSan/src/QLKS/controller/userDao.java</file>
+            <file>file:/D:/D/DotNet%20(%20Lp%20trình%20)/Java/github/QuanLyKhachSan/src/QLKS/util/PropertiesNVNow.java</file>
         </group>
-=======
-        <group/>
->>>>>>> Stashed changes
     </open-files>
 </project-private>

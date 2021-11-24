@@ -331,8 +331,9 @@ public class login extends javax.swing.JFrame {
     public bophanDao bpd = new bophanDao();
     public userDao userd = new userDao();
     public static String maNhanVien;
+    int solandangnhap = 5;
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
-        
+        solandangnhap--;
         String ma = usd.getmaNV(txtUsername.getText());
         
         staff st = staffd.getnv(ma);
@@ -345,16 +346,25 @@ public class login extends javax.swing.JFrame {
         PropertiesUtil propertiesUtil = new PropertiesUtil();
         String userName = txtUsername.getText();
         String password = new String(txtPassword.getPassword());
-        if (usd.checkLogin(userName, password)) {
-            if (cboRemember.isSelected()) {
-                propertiesUtil.addRemember(userName, password);
-            } else {
-                propertiesUtil.removeRemember();
-            }
-            this.dispose();
-            h.setVisible(rootPaneCheckingEnabled);
+        if(userName.equals("")){
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa điền tài khoản");
+        }else if(password.equals("")){
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa điền mật khẩu");
+        }else if (usd.checkLogin(userName, password)) {
+            if(usd.TT(userName)==1){
+                if (cboRemember.isSelected()) {
+                    propertiesUtil.addRemember(userName, password);
+                } else {
+                    propertiesUtil.removeRemember();
+                }
+                this.dispose();
+                solandangnhap = 5;
+                h.setVisible(rootPaneCheckingEnabled);
+            }else
+               JOptionPane.showMessageDialog(rootPane, "Tài khoản này đang bị khóa"); 
+            
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu không đúng.");
+            JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu không đúng! Bạn còn lần đăng "+solandangnhap+" nhập");
         }
     }//GEN-LAST:event_btnLoginMouseClicked
 
