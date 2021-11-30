@@ -339,6 +339,7 @@ public class login extends javax.swing.JFrame {
         String chucvu = userd.getQuyen(ma);
         String ten = st.getTenNV();
         PropertiesNVNow pr = new PropertiesNVNow();
+        System.out.println(chucvu);
         pr.addRemember(ma, chucvu, ten);
         maNhanVien=ma;
         System.out.println(usd.getmaNV(txtUsername.getText()));
