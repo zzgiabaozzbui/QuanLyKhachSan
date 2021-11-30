@@ -117,7 +117,7 @@ public class userDao implements Dao<taikhoan>{
     public String getQuyen(String ma) {
         String so = "";
         try {
-            String sql_select = "SELECT PhanQuyen FROM dangnhap WHERE PhanQuyen = '"+ma+"'";
+            String sql_select = "SELECT PhanQuyen FROM dangnhap WHERE MaNV = '"+ma+"'";
             PreparedStatement ps = conn.prepareStatement(sql_select);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {     
