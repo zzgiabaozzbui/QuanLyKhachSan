@@ -14,8 +14,11 @@ import java.text.SimpleDateFormat;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -470,13 +473,14 @@ public class DatDichVuMain extends javax.swing.JPanel {
        try {
         XSSFWorkbook workbook=new XSSFWorkbook();
         XSSFSheet sheet=workbook.createSheet("Đặt dịch vụ");
+       
         XSSFRow row=null;
            Cell cell=null;
            row=sheet.createRow(3);
            
            cell=row.createCell(0, CellType.STRING);
            cell.setCellValue("Mã hóa đơn đặt dịch vụ");
-           
+          
            cell=row.createCell(1, CellType.STRING);
            cell.setCellValue("Tên dịch vụ");
            
@@ -506,7 +510,7 @@ public class DatDichVuMain extends javax.swing.JPanel {
            for (int i = 0; i < ddvd.getList().size(); i++) {
             ddv=ddvd.getList().get(i);
             row=sheet.createRow(4+i);
-            
+             sheet.autoSizeColumn(i);
             cell=row.createCell(0, CellType.STRING);
             cell.setCellValue(ddv.getMaHDDV());
             
