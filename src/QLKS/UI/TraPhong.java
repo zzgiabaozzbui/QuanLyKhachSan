@@ -852,7 +852,7 @@ public class TraPhong extends javax.swing.JFrame {
 
     private void btnExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelActionPerformed
       Xuatexcel ex= new Xuatexcel();
-        ex.ExcelTraPhong(tblThuePhong, "HÓA ĐƠN", "HoaDon");
+        ex.ExcelTraPhong(tblThuePhong, "HÓA ĐƠN", "HoaDonKH");
        
     }//GEN-LAST:event_btnExcelActionPerformed
 
