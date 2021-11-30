@@ -22,6 +22,7 @@ import QLKS.model.staff;
 import QLKS.util.PropertiesUtil;
 import QLKS.util.PropertiesNVNow;
 import java.awt.Desktop;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -41,6 +42,7 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
+        txtUsername.requestFocusInWindow();
         initMoving(login.this);
         this.setLocationRelativeTo(null);
         PropertiesUtil propertiesUtil = new PropertiesUtil();
@@ -210,6 +212,11 @@ public class login extends javax.swing.JFrame {
                 txtPasswordActionPerformed(evt);
             }
         });
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyPressed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,6 +232,11 @@ public class login extends javax.swing.JFrame {
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsernameActionPerformed(evt);
+            }
+        });
+        txtUsername.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUsernameKeyPressed(evt);
             }
         });
 
@@ -331,8 +343,9 @@ public class login extends javax.swing.JFrame {
     public bophanDao bpd = new bophanDao();
     public userDao userd = new userDao();
     public static String maNhanVien;
+    int solandangnhap = 5;
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
-        
+        solandangnhap--;
         String ma = usd.getmaNV(txtUsername.getText());
         
         staff st = staffd.getnv(ma);
@@ -345,16 +358,25 @@ public class login extends javax.swing.JFrame {
         PropertiesUtil propertiesUtil = new PropertiesUtil();
         String userName = txtUsername.getText();
         String password = new String(txtPassword.getPassword());
-        if (usd.checkLogin(userName, password)) {
-            if (cboRemember.isSelected()) {
-                propertiesUtil.addRemember(userName, password);
-            } else {
-                propertiesUtil.removeRemember();
-            }
-            this.dispose();
-            h.setVisible(rootPaneCheckingEnabled);
+        if(userName.equals("")){
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa điền tài khoản");
+        }else if(password.equals("")){
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa điền mật khẩu");
+        }else if (usd.checkLogin(userName, password)) {
+            if(usd.TT(userName)==1){
+                if (cboRemember.isSelected()) {
+                    propertiesUtil.addRemember(userName, password);
+                } else {
+                    propertiesUtil.removeRemember();
+                }
+                this.dispose();
+                solandangnhap = 5;
+                h.setVisible(rootPaneCheckingEnabled);
+            }else
+               JOptionPane.showMessageDialog(rootPane, "Tài khoản này đang bị khóa"); 
+            
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu không đúng.");
+            JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu không đúng! Bạn còn lần đăng "+solandangnhap+" nhập");
         }
     }//GEN-LAST:event_btnLoginMouseClicked
 
@@ -378,6 +400,105 @@ public class login extends javax.swing.JFrame {
         } 
             
     }//GEN-LAST:event_lblforgetMouseClicked
+
+    //Keypress kích hoạt khi có 1 key được bấm txtUsername
+    private void txtUsernameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsernameKeyPressed
+        //Phat hiên nhân Enter
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if(txtUsername.getText().equals("")){
+                txtUsername.requestFocusInWindow();
+            }else if(txtPassword.getPassword().equals("")){
+                txtPassword.requestFocusInWindow();
+            }else{
+                solandangnhap--;
+                String ma = usd.getmaNV(txtUsername.getText());
+
+                staff st = staffd.getnv(ma);
+                String chucvu = userd.getQuyen(ma);
+                String ten = st.getTenNV();
+                PropertiesNVNow pr = new PropertiesNVNow();
+                pr.addRemember(ma, chucvu, ten);
+                maNhanVien=ma;
+                System.out.println(usd.getmaNV(txtUsername.getText()));
+                PropertiesUtil propertiesUtil = new PropertiesUtil();
+                String userName = txtUsername.getText();
+                String password = new String(txtPassword.getPassword());
+                if(userName.equals("")){
+                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa điền tài khoản");
+                    txtUsername.requestFocusInWindow();
+                }else if(password.equals("")){
+                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa điền mật khẩu");
+                    txtPassword.requestFocusInWindow();
+                }else if (usd.checkLogin(userName, password)) {
+                    if(usd.TT(userName)==1){
+                        if (cboRemember.isSelected()) {
+                            propertiesUtil.addRemember(userName, password);
+                        } else {
+                            propertiesUtil.removeRemember();
+                        }
+                        this.dispose();
+                        solandangnhap = 5;
+                        h.setVisible(rootPaneCheckingEnabled);
+                    }else{
+                        JOptionPane.showMessageDialog(rootPane, "Tài khoản này đang bị khóa"); 
+                        txtUsername.requestFocusInWindow();
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu không đúng! Bạn còn lần đăng "+solandangnhap+" nhập");
+                    txtUsername.requestFocusInWindow();
+                }
+            }
+        }
+    }//GEN-LAST:event_txtUsernameKeyPressed
+    //Keypress kích hoạt khi có 1 key được bấm txtPass
+    private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyPressed
+        //Phat hiên nhân Enter
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            if(txtUsername.getText().equals("")){
+                txtUsername.requestFocusInWindow();
+            }else if(txtPassword.getPassword().equals("")){
+                txtPassword.requestFocusInWindow();
+            }else{
+                solandangnhap--;
+                String ma = usd.getmaNV(txtUsername.getText());
+
+                staff st = staffd.getnv(ma);
+                String chucvu = userd.getQuyen(ma);
+                String ten = st.getTenNV();
+                PropertiesNVNow pr = new PropertiesNVNow();
+                pr.addRemember(ma, chucvu, ten);
+                maNhanVien=ma;
+                System.out.println(usd.getmaNV(txtUsername.getText()));
+                PropertiesUtil propertiesUtil = new PropertiesUtil();
+                String userName = txtUsername.getText();
+                String password = new String(txtPassword.getPassword());
+                if(userName.equals("")){
+                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa điền tài khoản");
+                    txtUsername.requestFocusInWindow();
+                }else if(password.equals("")){
+                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa điền mật khẩu");
+                    txtPassword.requestFocusInWindow();
+                }else if (usd.checkLogin(userName, password)) {
+                    if(usd.TT(userName)==1){
+                        if (cboRemember.isSelected()) {
+                            propertiesUtil.addRemember(userName, password);
+                        } else {
+                            propertiesUtil.removeRemember();
+                        }
+                        this.dispose();
+                        solandangnhap = 5;
+                        h.setVisible(rootPaneCheckingEnabled);
+                    }else{
+                        JOptionPane.showMessageDialog(rootPane, "Tài khoản này đang bị khóa"); 
+                        txtUsername.requestFocusInWindow();
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu không đúng! Bạn còn lần đăng "+solandangnhap+" nhập");
+                    txtUsername.requestFocusInWindow();
+                }
+            }
+        }
+    }//GEN-LAST:event_txtPasswordKeyPressed
 
     /**
      * @param args the command line arguments

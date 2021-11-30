@@ -92,7 +92,11 @@ public class Home extends javax.swing.JFrame {
         );
         pnMainLayout.setVerticalGroup(
             pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(pnImg, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+=======
+            .addGap(0, 0, Short.MAX_VALUE)
+>>>>>>> 3221578e0f9de17bbeed494213b5647186c7aac5
         );
 
         jPanel1.setBackground(new java.awt.Color(0, 143, 191));
@@ -118,7 +122,11 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(lblCV)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblTenNV)
+<<<<<<< HEAD
                 .addContainerGap(1439, Short.MAX_VALUE))
+=======
+                .addContainerGap(1308, Short.MAX_VALUE))
+>>>>>>> 3221578e0f9de17bbeed494213b5647186c7aac5
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,8 +146,13 @@ public class Home extends javax.swing.JFrame {
         pnBorder1Layout.setHorizontalGroup(
             pnBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBorder1Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addComponent(pnLeft1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+=======
+                .addComponent(pnLeft1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+>>>>>>> 3221578e0f9de17bbeed494213b5647186c7aac5
                 .addGroup(pnBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pnMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -149,7 +162,11 @@ public class Home extends javax.swing.JFrame {
             pnBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBorder1Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+=======
+                .addGap(0, 0, 0)
+>>>>>>> 3221578e0f9de17bbeed494213b5647186c7aac5
                 .addComponent(pnMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(pnLeft1, javax.swing.GroupLayout.DEFAULT_SIZE, 999, Short.MAX_VALUE)
         );
