@@ -52,6 +52,7 @@ public class pnLeft extends javax.swing.JPanel {
      */
     public pnLeft() {
         initComponents();
+        PQ();
         setOpaque(false);
         HideMenu();
     }
