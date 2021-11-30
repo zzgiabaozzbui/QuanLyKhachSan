@@ -725,9 +725,11 @@ public class TraPhong extends javax.swing.JFrame {
 
         if (trangThaiHd == 0) {
             btnTraPhong.setEnabled(true);
+            btnExcel.setEnabled(false);
 
         } else {
             btnTraPhong.setEnabled(false);
+            btnExcel.setEnabled(true);
             dateNgayTraPhong.setValue(hoaDonDao.getNgayTraPhong(txtIDDatPhong.getText()));
         }
 
