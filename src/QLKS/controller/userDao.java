@@ -53,7 +53,20 @@ public class userDao implements Dao<taikhoan>{
         return false;
     }
 
-   
+   public int PQ(String ma) {
+        int so = 0;
+        try {
+            String sql_select = "SELECT PhanQuyen FROM dangnhap WHERE MaNV = '"+ma+"'";
+            PreparedStatement ps = conn.prepareStatement(sql_select);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {     
+                so = rs.getInt("PhanQuyen");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return so;
+    }
     
     public String doiPQ(String pq){
         if (pq.equals("1")) {

@@ -28,6 +28,8 @@ import QLKS.UI.ThongTinPhong;
 import QLKS.UI.ThuePhong;
 import QLKS.UI.TraPhong;
 import QLKS.UI.TrangChuDichVu;
+import QLKS.controller.userDao;
+import QLKS.util.PropertiesNVNow;
 import QLKS.view.ChiTietHoaDon;
 import QLKS.view.Customview;
 import QLKS.view.Staffview;
@@ -53,7 +55,99 @@ public class pnLeft extends javax.swing.JPanel {
         setOpaque(false);
         HideMenu();
     }
+    public void PQ(){
+        String ma =  new PropertiesNVNow().getRemember().get(0);
+        int st = new userDao().PQ(ma);
+        if(st==1){
+        //Amin
+        btnTK.setVisible(true);
+        btnQLTK.setVisible(true);
+        btnDangXuat.setVisible(true);
+        
+        btnQL.setVisible(true);
+        btnQLKH.setVisible(true);
+        btnQLNV.setVisible(true);
+        btnQLLP.setVisible(true);
+        btnQLP.setVisible(true);
+        
+        btnDV.setVisible(true);
+        
+        btnHD.setVisible(true);
+        
+        btnSP.setVisible(true);
+        btnQLPT.setVisible(true);
+        btnQLSP.setVisible(true);
+        btnQLNK.setVisible(true);
+        
+        btnP.setVisible(true);
+        btnDP.setVisible(true);
+        btnTP.setVisible(true);
+        btnTraPhong.setVisible(true);
+                
+        btnThK.setVisible(false);
+        btnThongKeNK.setVisible(false);
+        btnThongKeTN.setVisible(false);
+        }else if(st==2){
+        //quan ly
+        btnTK.setVisible(true);
+        btnQLTK.setVisible(false);
+        btnDangXuat.setVisible(true);
+        
+        btnQL.setVisible(true);
+        btnQLKH.setVisible(false);
+        btnQLNV.setVisible(false);
+        btnQLLP.setVisible(true);
+        btnQLP.setVisible(false);
+        
+        btnDV.setVisible(true);
+        
+        btnHD.setVisible(false);
+        
+        btnSP.setVisible(true);
+        btnQLPT.setVisible(true);
+        btnQLSP.setVisible(false);
+        btnQLNK.setVisible(true);
+        
+        btnP.setVisible(false);
+        btnDP.setVisible(true);
+        btnTP.setVisible(true);
+        btnTraPhong.setVisible(true);
+                
+        btnThK.setVisible(false);
+        btnThongKeNK.setVisible(false);
+        btnThongKeTN.setVisible(false);
+        }else if(st==3){
+        //nhân viên
+        btnTK.setVisible(true);
+        btnQLTK.setVisible(false);
+        btnDangXuat.setVisible(true);
+        
+        btnQL.setVisible(true);
+        btnQLKH.setVisible(true);
+        btnQLNV.setVisible(false);
+        btnQLLP.setVisible(false);
+        btnQLP.setVisible(true);
+        
+        btnDV.setVisible(true);
+        
+        btnHD.setVisible(false);
+        
+        btnSP.setVisible(false);
+        btnQLPT.setVisible(true);
+        btnQLSP.setVisible(false);
+        btnQLNK.setVisible(true);
+        
+        btnP.setVisible(true);
+        btnDP.setVisible(true);
+        btnTP.setVisible(true);
+        btnTraPhong.setVisible(true);
+                
+        btnThK.setVisible(false);
+        btnThongKeNK.setVisible(false);
+        btnThongKeTN.setVisible(false);
+        }
     
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -117,22 +211,22 @@ public class pnLeft extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(70, 70, 70)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(jLabel2)))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jPanel11.setOpaque(false);
@@ -584,11 +678,10 @@ public class pnLeft extends javax.swing.JPanel {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnTK, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnQL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnQL, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
             .addComponent(pnQL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnThK, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
+            .addComponent(btnThK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnTT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnThK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -597,6 +690,7 @@ public class pnLeft extends javax.swing.JPanel {
             .addComponent(btnSP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnSP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnTK, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -649,9 +743,8 @@ public class pnLeft extends javax.swing.JPanel {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 43, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
