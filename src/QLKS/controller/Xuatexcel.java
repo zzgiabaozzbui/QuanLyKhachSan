@@ -34,8 +34,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author zzgia
  */
 public class Xuatexcel {
-public void excel(JTable tblTable,String tit,String fileName){
-    XSSFWorkbook workbook = new XSSFWorkbook();
+
+    public void excel(JTable tblTable, String tit, String fileName) {
+        XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet spreadsheet = workbook.createSheet("Staff");
         XSSFRow row = null;
         XSSFCell cell = null;
@@ -43,7 +44,7 @@ public void excel(JTable tblTable,String tit,String fileName){
         //Font chu style2 cho QLKS
         XSSFFont font2 = workbook.createFont();
         font2.setBold(true);
-        font2.setFontHeightInPoints((short) 16);  
+        font2.setFontHeightInPoints((short) 16);
         font2.setFontName("Times New Roman");
         XSSFCellStyle style2 = workbook.createCellStyle();
         style2.setFont(font2);
@@ -51,7 +52,7 @@ public void excel(JTable tblTable,String tit,String fileName){
         //Font chu style3 cho ten DSach
         XSSFFont font3 = workbook.createFont();
         font3.setBold(true);
-        font3.setFontHeightInPoints((short) 13);  
+        font3.setFontHeightInPoints((short) 13);
         font3.setFontName("Times New Roman");
         XSSFCellStyle style3 = workbook.createCellStyle();
         style3.setFont(font3);
@@ -59,7 +60,7 @@ public void excel(JTable tblTable,String tit,String fileName){
         //Font chu style
         XSSFFont font = workbook.createFont();
         font.setBold(true);
-        font.setFontHeightInPoints((short) 12);  
+        font.setFontHeightInPoints((short) 12);
         font.setFontName("Times New Roman");
 
         XSSFCellStyle style = workbook.createCellStyle();
@@ -77,8 +78,7 @@ public void excel(JTable tblTable,String tit,String fileName){
         //Row headder for table
         row = spreadsheet.createRow((short) 3);
         row.setHeight((short) 500);
-        for (int i = 0; i < tblTable.getColumnCount() ; i++)
-        {
+        for (int i = 0; i < tblTable.getColumnCount(); i++) {
             //Get ten cac column
             String valueAt = (String) tblTable.getColumnName(i);
 
@@ -88,10 +88,9 @@ public void excel(JTable tblTable,String tit,String fileName){
         }
         spreadsheet.autoSizeColumn(0);
 
-
         //Font chu style4
         XSSFFont font4 = workbook.createFont();
-        font4.setFontHeightInPoints((short) 12);  
+        font4.setFontHeightInPoints((short) 12);
         font4.setFontName("Times New Roman");
 
         XSSFCellStyle style4 = workbook.createCellStyle();
@@ -99,21 +98,20 @@ public void excel(JTable tblTable,String tit,String fileName){
 //            style4.setFillForegroundColor(IndexedColors.AQUA.getIndex());
 //            style4.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         //border
-        style4.setBorderBottom(BorderStyle.THIN );
+        style4.setBorderBottom(BorderStyle.THIN);
         style4.setBorderRight(BorderStyle.THIN);
         //Align text
         style4.setAlignment(HorizontalAlignment.CENTER);
         style4.setFont(font4);
 
 // -------------------------------------------------------------------TABLE---------------------------------------------------------------------
-        
         String valueAt1 = "";
         staff pUpdate = null;
 
         for (int i = 0; i < tblTable.getRowCount(); i++) {
-            row = spreadsheet.createRow((short) 4+i);
+            row = spreadsheet.createRow((short) 4 + i);
             row.setHeight((short) 500);
-            for (int j = 0; j < tblTable.getColumnCount() ; j++){
+            for (int j = 0; j < tblTable.getColumnCount(); j++) {
 
                 valueAt1 = (String) tblTable.getValueAt(i, j);
                 cell = row.createCell(j, CellType.STRING);
@@ -125,8 +123,7 @@ public void excel(JTable tblTable,String tit,String fileName){
         }
 
         //Set with auto cho cac column 1-> cuoi
-        for (int i = 1; i < tblTable.getColumnCount() ; i++)
-        {
+        for (int i = 1; i < tblTable.getColumnCount(); i++) {
             spreadsheet.autoSizeColumn(i);
 
         }
@@ -141,12 +138,12 @@ public void excel(JTable tblTable,String tit,String fileName){
         row = spreadsheet.createRow((short) 1);
         row.setHeight((short) 500);
         cell = row.createCell(0, CellType.STRING);
-        cell.setCellValue("DANH SÁCH "+tit);
+        cell.setCellValue("DANH SÁCH " + tit);
         cell.setCellStyle(style3);
 
         FileOutputStream out;
         try {
-            out = new FileOutputStream(new File("D:/java/"+fileName+".xlsx"));
+            out = new FileOutputStream(new File("D:/java/" + fileName + ".xlsx"));
             workbook.write(out);
             out.close();
         } catch (FileNotFoundException ex) {
@@ -155,8 +152,9 @@ public void excel(JTable tblTable,String tit,String fileName){
             Logger.getLogger(Staffview.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-public void excelPT(JTable tblTable,String tit,String fileName){
-    XSSFWorkbook workbook = new XSSFWorkbook();
+
+    public void excelPT(JTable tblTable, String tit, String fileName) {
+        XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet spreadsheet = workbook.createSheet("Staff");
         XSSFRow row = null;
         XSSFCell cell = null;
@@ -164,7 +162,7 @@ public void excelPT(JTable tblTable,String tit,String fileName){
         //Font chu style2 cho QLKS
         XSSFFont font2 = workbook.createFont();
         font2.setBold(true);
-        font2.setFontHeightInPoints((short) 16);  
+        font2.setFontHeightInPoints((short) 16);
         font2.setFontName("Times New Roman");
         XSSFCellStyle style2 = workbook.createCellStyle();
         style2.setFont(font2);
@@ -172,7 +170,7 @@ public void excelPT(JTable tblTable,String tit,String fileName){
         //Font chu style3 cho ten DSach
         XSSFFont font3 = workbook.createFont();
         font3.setBold(true);
-        font3.setFontHeightInPoints((short) 13);  
+        font3.setFontHeightInPoints((short) 13);
         font3.setFontName("Times New Roman");
         XSSFCellStyle style3 = workbook.createCellStyle();
         style3.setFont(font3);
@@ -180,7 +178,7 @@ public void excelPT(JTable tblTable,String tit,String fileName){
         //Font chu style
         XSSFFont font = workbook.createFont();
         font.setBold(true);
-        font.setFontHeightInPoints((short) 12);  
+        font.setFontHeightInPoints((short) 12);
         font.setFontName("Times New Roman");
 
         XSSFCellStyle style = workbook.createCellStyle();
@@ -198,8 +196,7 @@ public void excelPT(JTable tblTable,String tit,String fileName){
         //Row headder for table
         row = spreadsheet.createRow((short) 3);
         row.setHeight((short) 500);
-        for (int i = 0; i < tblTable.getColumnCount() ; i++)
-        {
+        for (int i = 0; i < tblTable.getColumnCount(); i++) {
             //Get ten cac column
             String valueAt = (String) tblTable.getColumnName(i);
 
@@ -209,10 +206,9 @@ public void excelPT(JTable tblTable,String tit,String fileName){
         }
         spreadsheet.autoSizeColumn(0);
 
-
         //Font chu style4
         XSSFFont font4 = workbook.createFont();
-        font4.setFontHeightInPoints((short) 12);  
+        font4.setFontHeightInPoints((short) 12);
         font4.setFontName("Times New Roman");
 
         XSSFCellStyle style4 = workbook.createCellStyle();
@@ -220,14 +216,13 @@ public void excelPT(JTable tblTable,String tit,String fileName){
 //            style4.setFillForegroundColor(IndexedColors.AQUA.getIndex());
 //            style4.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         //border
-        style4.setBorderBottom(BorderStyle.THIN );
+        style4.setBorderBottom(BorderStyle.THIN);
         style4.setBorderRight(BorderStyle.THIN);
         //Align text
         style4.setAlignment(HorizontalAlignment.CENTER);
         style4.setFont(font4);
 
 // -------------------------------------------------------------------TABLE---------------------------------------------------------------------
-        
         String sanPham = "";
         String tenKH;
         String maPT;
@@ -236,49 +231,44 @@ public void excelPT(JTable tblTable,String tit,String fileName){
         staff pUpdate = null;
         Double thanhTien;
         for (int i = 0; i < tblTable.getRowCount(); i++) {
-            row = spreadsheet.createRow((short) 4+i);
+            row = spreadsheet.createRow((short) 4 + i);
             row.setHeight((short) 500);
 //                4, sản phẩm,5 số lượng, 6 ngày bán, 7, thành tiền
-                    maPT = (String) tblTable.getValueAt(i, 0);
-                    cell = row.createCell(0, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(maPT);  
-           
+            maPT = (String) tblTable.getValueAt(i, 0);
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(maPT);
 
-                    tenKH = (String) tblTable.getValueAt(i, 1);
-                    cell = row.createCell(1, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(tenKH);  
-                    System.out.println(tenKH);
-                    
+            tenKH = (String) tblTable.getValueAt(i, 1);
+            cell = row.createCell(1, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(tenKH);
+            System.out.println(tenKH);
 
-                    sanPham = (String) tblTable.getValueAt(i, 2);
-                    cell = row.createCell(2, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(sanPham);       
-                    
-                    SoLuong = (Integer) tblTable.getValueAt(i, 3);
-                    cell = row.createCell(3, CellType.NUMERIC);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(SoLuong);
-                    
-                    valueTimeAt1 = (Date) tblTable.getValueAt(i, 4);
-                    cell = row.createCell(4, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(valueTimeAt1);
-                    
-                    thanhTien = (Double) tblTable.getValueAt(i, 5);
-                    cell = row.createCell(5, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(thanhTien);
-                    
-                    
-                    
+            sanPham = (String) tblTable.getValueAt(i, 2);
+            cell = row.createCell(2, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(sanPham);
+
+            SoLuong = (Integer) tblTable.getValueAt(i, 3);
+            cell = row.createCell(3, CellType.NUMERIC);
+            cell.setCellStyle(style4);
+            cell.setCellValue(SoLuong);
+
+            valueTimeAt1 = (Date) tblTable.getValueAt(i, 4);
+            cell = row.createCell(4, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(valueTimeAt1);
+
+            thanhTien = (Double) tblTable.getValueAt(i, 5);
+            cell = row.createCell(5, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(thanhTien);
+
         }
 
         //Set with auto cho cac column 1-> cuoi
-        for (int i = 1; i < tblTable.getColumnCount() ; i++)
-        {
+        for (int i = 1; i < tblTable.getColumnCount(); i++) {
             spreadsheet.autoSizeColumn(i);
 
         }
@@ -293,12 +283,12 @@ public void excelPT(JTable tblTable,String tit,String fileName){
         row = spreadsheet.createRow((short) 1);
         row.setHeight((short) 500);
         cell = row.createCell(0, CellType.STRING);
-        cell.setCellValue("DANH SÁCH "+tit);
+        cell.setCellValue("DANH SÁCH " + tit);
         cell.setCellStyle(style3);
 
         FileOutputStream out;
         try {
-            out = new FileOutputStream(new File("D:/java/"+fileName+".xlsx"),false);
+            out = new FileOutputStream(new File("D:/java/" + fileName + ".xlsx"), false);
             workbook.write(out);
             out.close();
         } catch (FileNotFoundException ex) {
@@ -306,9 +296,10 @@ public void excelPT(JTable tblTable,String tit,String fileName){
         } catch (IOException ex) {
             Logger.getLogger(Staffview.class.getName()).log(Level.SEVERE, null, ex);
         }
-}
-public void ExcelHD(JTable tblTable,String tit,String fileName){
-    XSSFWorkbook workbook = new XSSFWorkbook();
+    }
+
+    public void ExcelHD(JTable tblTable, String tit, String fileName) {
+        XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet spreadsheet = workbook.createSheet("Staff");
         XSSFRow row = null;
         XSSFCell cell = null;
@@ -316,7 +307,7 @@ public void ExcelHD(JTable tblTable,String tit,String fileName){
         //Font chu style2 cho QLKS
         XSSFFont font2 = workbook.createFont();
         font2.setBold(true);
-        font2.setFontHeightInPoints((short) 16);  
+        font2.setFontHeightInPoints((short) 16);
         font2.setFontName("Times New Roman");
         XSSFCellStyle style2 = workbook.createCellStyle();
         style2.setFont(font2);
@@ -324,7 +315,7 @@ public void ExcelHD(JTable tblTable,String tit,String fileName){
         //Font chu style3 cho ten DSach
         XSSFFont font3 = workbook.createFont();
         font3.setBold(true);
-        font3.setFontHeightInPoints((short) 13);  
+        font3.setFontHeightInPoints((short) 13);
         font3.setFontName("Times New Roman");
         XSSFCellStyle style3 = workbook.createCellStyle();
         style3.setFont(font3);
@@ -332,7 +323,7 @@ public void ExcelHD(JTable tblTable,String tit,String fileName){
         //Font chu style
         XSSFFont font = workbook.createFont();
         font.setBold(true);
-        font.setFontHeightInPoints((short) 12);  
+        font.setFontHeightInPoints((short) 12);
         font.setFontName("Times New Roman");
 
         XSSFCellStyle style = workbook.createCellStyle();
@@ -350,8 +341,7 @@ public void ExcelHD(JTable tblTable,String tit,String fileName){
         //Row headder for table
         row = spreadsheet.createRow((short) 3);
         row.setHeight((short) 500);
-        for (int i = 0; i < tblTable.getColumnCount() ; i++)
-        {
+        for (int i = 0; i < tblTable.getColumnCount(); i++) {
             //Get ten cac column
             String valueAt = (String) tblTable.getColumnName(i);
 
@@ -361,10 +351,9 @@ public void ExcelHD(JTable tblTable,String tit,String fileName){
         }
         spreadsheet.autoSizeColumn(0);
 
-
         //Font chu style4
         XSSFFont font4 = workbook.createFont();
-        font4.setFontHeightInPoints((short) 12);  
+        font4.setFontHeightInPoints((short) 12);
         font4.setFontName("Times New Roman");
 
         XSSFCellStyle style4 = workbook.createCellStyle();
@@ -372,14 +361,13 @@ public void ExcelHD(JTable tblTable,String tit,String fileName){
 //            style4.setFillForegroundColor(IndexedColors.AQUA.getIndex());
 //            style4.setFillPattern(FillPatternType.SOLID_FOREGROUND);
         //border
-        style4.setBorderBottom(BorderStyle.THIN );
+        style4.setBorderBottom(BorderStyle.THIN);
         style4.setBorderRight(BorderStyle.THIN);
         //Align text
         style4.setAlignment(HorizontalAlignment.CENTER);
         style4.setFont(font4);
 
 // -------------------------------------------------------------------TABLE---------------------------------------------------------------------
-        
         String sanPham = "";
         String tenKH;
         String maHD;
@@ -389,50 +377,44 @@ public void ExcelHD(JTable tblTable,String tit,String fileName){
         staff pUpdate = null;
         Double thanhTien;
         for (int i = 0; i < tblTable.getRowCount(); i++) {
-            row = spreadsheet.createRow((short) 4+i);
+            row = spreadsheet.createRow((short) 4 + i);
             row.setHeight((short) 500);
 //                4, sản phẩm,5 số lượng, 6 ngày bán, 7, thành tiền
-                    maHD = (String) tblTable.getValueAt(i, 0);
-                    cell = row.createCell(0, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(maHD);  
-           
+            maHD = (String) tblTable.getValueAt(i, 0);
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(maHD);
 
-                    tenKH = (String) tblTable.getValueAt(i, 1);
-                    cell = row.createCell(1, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(tenKH);  
-                    System.out.println(tenKH);
-                    
+            tenKH = (String) tblTable.getValueAt(i, 1);
+            cell = row.createCell(1, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(tenKH);
+            System.out.println(tenKH);
 
-                    maDP = (String) tblTable.getValueAt(i, 2);
-                    cell = row.createCell(2, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(maDP);       
-              
-                    
-                    valueTimeAt1 = (Date) tblTable.getValueAt(i, 3);
-                    cell = row.createCell(3, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(valueTimeAt1);
-                    
-                    thanhTien = (Double) tblTable.getValueAt(i, 4);
-                    cell = row.createCell(4, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(thanhTien);
-                    
-                     trangThai = (String) tblTable.getValueAt(i, 5);
-                    cell = row.createCell(5, CellType.STRING);
-                    cell.setCellStyle(style4);
-                    cell.setCellValue(trangThai); 
-                    
-                    
-                    
+            maDP = (String) tblTable.getValueAt(i, 2);
+            cell = row.createCell(2, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(maDP);
+
+            valueTimeAt1 = (Date) tblTable.getValueAt(i, 3);
+            cell = row.createCell(3, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(valueTimeAt1);
+
+            thanhTien = (Double) tblTable.getValueAt(i, 4);
+            cell = row.createCell(4, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(thanhTien);
+
+            trangThai = (String) tblTable.getValueAt(i, 5);
+            cell = row.createCell(5, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(trangThai);
+
         }
 
         //Set with auto cho cac column 1-> cuoi
-        for (int i = 1; i < tblTable.getColumnCount() ; i++)
-        {
+        for (int i = 1; i < tblTable.getColumnCount(); i++) {
             spreadsheet.autoSizeColumn(i);
 
         }
@@ -447,12 +429,12 @@ public void ExcelHD(JTable tblTable,String tit,String fileName){
         row = spreadsheet.createRow((short) 1);
         row.setHeight((short) 500);
         cell = row.createCell(0, CellType.STRING);
-        cell.setCellValue("DANH SÁCH "+tit);
+        cell.setCellValue("DANH SÁCH " + tit);
         cell.setCellStyle(style3);
 
         FileOutputStream out;
         try {
-            out = new FileOutputStream(new File("D:/java/"+fileName+".xlsx"),false);
+            out = new FileOutputStream(new File("D:/java/" + fileName + ".xlsx"), false);
             workbook.write(out);
             out.close();
         } catch (FileNotFoundException ex) {
@@ -460,5 +442,172 @@ public void ExcelHD(JTable tblTable,String tit,String fileName){
         } catch (IOException ex) {
             Logger.getLogger(Staffview.class.getName()).log(Level.SEVERE, null, ex);
         }
-}
+    }
+    
+    public void ExcelTraPhong(JTable tblTable, String tit, String fileName) {
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        XSSFSheet spreadsheet = workbook.createSheet("Staff");
+        XSSFRow row = null;
+        XSSFCell cell = null;
+
+        //Font chu style2 cho QLKS
+        XSSFFont font2 = workbook.createFont();
+        font2.setBold(true);
+        font2.setFontHeightInPoints((short) 16);
+        font2.setFontName("Times New Roman");
+        XSSFCellStyle style2 = workbook.createCellStyle();
+        style2.setFont(font2);
+
+        //Font chu style3 cho ten DSach
+        XSSFFont font3 = workbook.createFont();
+        font3.setBold(true);
+        font3.setFontHeightInPoints((short) 13);
+        font3.setFontName("Times New Roman");
+        XSSFCellStyle style3 = workbook.createCellStyle();
+        style3.setFont(font3);
+
+        //Font chu style
+        XSSFFont font = workbook.createFont();
+        font.setBold(true);
+        font.setFontHeightInPoints((short) 12);
+        font.setFontName("Times New Roman");
+
+        XSSFCellStyle style = workbook.createCellStyle();
+        //Mau nen
+        style.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
+        style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        //border
+        style.setBorderTop(BorderStyle.THIN);
+        style.setBorderBottom(BorderStyle.THIN);
+        style.setBorderRight(BorderStyle.THIN);
+        //Text align
+        style.setAlignment(HorizontalAlignment.CENTER);
+        style.setFont(font);
+
+        //Row headder for table
+        row = spreadsheet.createRow((short) 3);
+        row.setHeight((short) 500);
+        for (int i = 0; i < tblTable.getColumnCount()-1; i++) {
+            //Get ten cac column
+            String valueAt = (String) tblTable.getColumnName(i);
+
+            cell = row.createCell(i, CellType.STRING);
+            cell.setCellStyle(style);
+            cell.setCellValue(valueAt);
+        }
+        spreadsheet.autoSizeColumn(0);
+
+        //Font chu style4
+        XSSFFont font4 = workbook.createFont();
+        font4.setFontHeightInPoints((short) 12);
+        font4.setFontName("Times New Roman");
+
+        XSSFCellStyle style4 = workbook.createCellStyle();
+//            //Mau nen
+//            style4.setFillForegroundColor(IndexedColors.AQUA.getIndex());
+//            style4.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        //border
+        style4.setBorderBottom(BorderStyle.THIN);
+        style4.setBorderRight(BorderStyle.THIN);
+        //Align text
+        style4.setAlignment(HorizontalAlignment.CENTER);
+        style4.setFont(font4);
+
+// -------------------------------------------------------------------TABLE---------------------------------------------------------------------
+        String MaHD = "";
+        String IDDatPhong;
+        String MaPhong;
+        String MaNV;
+         String MaKH;
+          int SoNg;
+         float  DatCoc;
+         Date NgayDatPhong;
+         Date NgayNhanPhong;
+         double ThanhTien;
+      
+        for (int i = 0; i < tblTable.getRowCount(); i++) {
+            row = spreadsheet.createRow((short) 4 + i);
+            row.setHeight((short) 500);
+            MaHD = (String) tblTable.getValueAt(i, 0);
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(MaHD);
+
+            IDDatPhong = (String) tblTable.getValueAt(i, 1);
+            cell = row.createCell(1, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(IDDatPhong);
+           
+
+            MaPhong = (String) tblTable.getValueAt(i, 2);
+            cell = row.createCell(2, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(MaPhong);
+            MaNV = (String) tblTable.getValueAt(i, 3);
+            cell = row.createCell(3, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(MaNV);
+            
+            MaKH = (String) tblTable.getValueAt(i, 4);
+            cell = row.createCell(4, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(MaKH);
+            
+            SoNg = (Integer) tblTable.getValueAt(i, 5);
+            cell = row.createCell(5, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(SoNg);
+            
+            DatCoc = (float) tblTable.getValueAt(i, 6);
+            cell = row.createCell(6, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(DatCoc);
+
+            NgayDatPhong = (Date) tblTable.getValueAt(i, 7);
+            cell = row.createCell(7, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(NgayDatPhong);
+            NgayNhanPhong = (Date) tblTable.getValueAt(i, 8);
+            cell = row.createCell(8, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(NgayNhanPhong);
+            
+
+            ThanhTien = (Double) tblTable.getValueAt(i, 9);
+            cell = row.createCell(9, CellType.STRING);
+            cell.setCellStyle(style4);
+            cell.setCellValue(ThanhTien);
+        }
+
+        //Set with auto cho cac column 1-> cuoi
+        for (int i = 1; i < tblTable.getColumnCount(); i++) {
+            spreadsheet.autoSizeColumn(i);
+
+        }
+
+        //Ten Dsach
+        row = spreadsheet.createRow((short) 0);
+        row.setHeight((short) 700);
+        cell = row.createCell(0, CellType.STRING);
+        cell.setCellStyle(style2);
+        cell.setCellValue("QUẢN LÝ KHÁCH SẠN");
+
+        row = spreadsheet.createRow((short) 1);
+        row.setHeight((short) 500);
+        cell = row.createCell(0, CellType.STRING);
+        cell.setCellValue("DANH SÁCH " + tit);
+        cell.setCellStyle(style3);
+
+        FileOutputStream out;
+        try {
+            out = new FileOutputStream(new File("D:/java/" + fileName + ".xlsx"), false);
+            workbook.write(out);
+            out.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Staffview.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Staffview.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
