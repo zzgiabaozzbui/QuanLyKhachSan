@@ -54,6 +54,10 @@ public class TaiKhoanview extends javax.swing.JFrame {
     }
     public TaiKhoanview()  {
         initComponents();
+        txtTK.requestFocusInWindow();
+        cboMaNV.setBackground(Color.white);
+        cboQ.setBackground(Color.white);
+        cboTT.setBackground(Color.white);
         tblTK.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
         btnS.setEnabled(false);
         btnX.setEnabled(false);
@@ -208,7 +212,8 @@ public class TaiKhoanview extends javax.swing.JFrame {
                 .addGap(0, 3, Short.MAX_VALUE))
         );
 
-        pnBorder2.setBackground(new java.awt.Color(0, 204, 255));
+        pnBorder2.setBackground(new java.awt.Color(255, 255, 255));
+        pnBorder2.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách tài khoản"));
 
         tblTK.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -237,12 +242,14 @@ public class TaiKhoanview extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pnBorder3.setBackground(new java.awt.Color(0, 204, 255));
+        pnBorder3.setBackground(new java.awt.Color(255, 255, 255));
+        pnBorder3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnT.setBackground(new java.awt.Color(255, 255, 255));
         btnT.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add_35_gradian.png"))); // NOI18N
         btnT.setText("Thêm");
-        btnT.setBorder(null);
+        btnT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTActionPerformed(evt);
@@ -251,8 +258,9 @@ public class TaiKhoanview extends javax.swing.JFrame {
 
         btnS.setBackground(new java.awt.Color(255, 255, 255));
         btnS.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/update_35_gradian.png"))); // NOI18N
         btnS.setText("Sửa");
-        btnS.setBorder(null);
+        btnS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSActionPerformed(evt);
@@ -261,8 +269,9 @@ public class TaiKhoanview extends javax.swing.JFrame {
 
         btnX.setBackground(new java.awt.Color(255, 255, 255));
         btnX.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete_35_gradien.png"))); // NOI18N
         btnX.setText("Xóa");
-        btnX.setBorder(null);
+        btnX.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnXActionPerformed(evt);
@@ -271,8 +280,9 @@ public class TaiKhoanview extends javax.swing.JFrame {
 
         btnexit.setBackground(new java.awt.Color(255, 255, 255));
         btnexit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/thoat_35.png"))); // NOI18N
         btnexit.setText("Thoát");
-        btnexit.setBorder(null);
+        btnexit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnexitActionPerformed(evt);
@@ -281,8 +291,9 @@ public class TaiKhoanview extends javax.swing.JFrame {
 
         btnExcel.setBackground(new java.awt.Color(255, 255, 255));
         btnExcel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/excel_35.png"))); // NOI18N
         btnExcel.setText("Xuất excel");
-        btnExcel.setBorder(null);
+        btnExcel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcelActionPerformed(evt);
@@ -295,8 +306,9 @@ public class TaiKhoanview extends javax.swing.JFrame {
 
         btnReset.setBackground(new java.awt.Color(255, 255, 255));
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/quay_lai_35.png"))); // NOI18N
         btnReset.setText("Nhập lại");
-        btnReset.setBorder(null);
+        btnReset.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
@@ -305,8 +317,9 @@ public class TaiKhoanview extends javax.swing.JFrame {
 
         btnBieuDo.setBackground(new java.awt.Color(255, 255, 255));
         btnBieuDo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnBieuDo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chart_35.png"))); // NOI18N
         btnBieuDo.setText("Thống kê");
-        btnBieuDo.setBorder(null);
+        btnBieuDo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnBieuDo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBieuDoActionPerformed(evt);
@@ -318,37 +331,36 @@ public class TaiKhoanview extends javax.swing.JFrame {
         pnBorder3Layout.setHorizontalGroup(
             pnBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBorder3Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(48, 48, 48)
                 .addComponent(btnT, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
-                .addComponent(btnS, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93)
-                .addComponent(btnX, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98)
-                .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109)
-                .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98)
-                .addComponent(btnBieuDo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89)
+                .addGap(63, 63, 63)
+                .addComponent(btnS, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79)
+                .addComponent(btnX, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
+                .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(btnBieuDo, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
                 .addComponent(btnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(34, 34, 34))
             .addGroup(pnBorder3Layout.createSequentialGroup()
                 .addGap(138, 138, 138)
                 .addComponent(lblerro, javax.swing.GroupLayout.PREFERRED_SIZE, 1105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
         pnBorder3Layout.setVerticalGroup(
             pnBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBorder3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnBieuDo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnX, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnS, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnBorder3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBieuDo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnX, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnS, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnT, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -368,40 +380,41 @@ public class TaiKhoanview extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
-        jLabel1.setText("QUẢN LÝ NHÂN VIÊN");
+        jLabel1.setText("QUẢN LÝ TÀI KHOẢN");
 
-        pnBorder5.setBackground(new java.awt.Color(0, 204, 255));
+        pnBorder5.setBackground(new java.awt.Color(255, 255, 255));
+        pnBorder5.setBorder(javax.swing.BorderFactory.createTitledBorder("Chi tiết tài khoản"));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Mã nhân viên:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Bộ phận:");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Họ và tên:");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Mật khẩu:");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Quyền:");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Email:");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Tài khoản:");
 
         txtTK.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtTK.setBorder(null);
+        txtTK.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtTK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTKActionPerformed(evt);
@@ -409,7 +422,7 @@ public class TaiKhoanview extends javax.swing.JFrame {
         });
 
         txtMK.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtMK.setBorder(null);
+        txtMK.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtMK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMKActionPerformed(evt);
@@ -417,18 +430,18 @@ public class TaiKhoanview extends javax.swing.JFrame {
         });
 
         txtTen.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtTen.setBorder(null);
+        txtTen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtemail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtemail.setBorder(null);
+        txtemail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtbp.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtbp.setBorder(null);
+        txtbp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         cboQ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân viên", "Quản trị", "Quản lý" }));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("Trạng thái:");
 
         cboTT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mở", "Khóa" }));
@@ -498,7 +511,8 @@ public class TaiKhoanview extends javax.swing.JFrame {
                 .addGap(157, 157, 157))
         );
 
-        pnBorder4.setBackground(new java.awt.Color(0, 204, 255));
+        pnBorder4.setBackground(new java.awt.Color(255, 255, 255));
+        pnBorder4.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách nhân viên không có tài khoản"));
 
         jScrollPane2.setViewportView(lstNhanVien);
 
@@ -530,25 +544,25 @@ public class TaiKhoanview extends javax.swing.JFrame {
                 .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnBorder1Layout.createSequentialGroup()
-                .addGap(475, 475, 475)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnBorder1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnBorder4, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addComponent(pnBorder4, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(pnBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnBorder3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnBorder2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnBorder5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnBorder1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(559, 559, 559))
         );
         pnBorder1Layout.setVerticalGroup(
             pnBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBorder1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addGroup(pnBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))

@@ -48,6 +48,7 @@ public class Customview extends javax.swing.JFrame {
      */
     public Customview(){
         initComponents();
+        txtMaKH.requestFocusInWindow();
         tblKH.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
         setExtendedState(MAXIMIZED_BOTH);
         buttonGroup1.add(rdoNu);
@@ -201,7 +202,8 @@ public class Customview extends javax.swing.JFrame {
                 .addGap(0, 3, Short.MAX_VALUE))
         );
 
-        pnBorder2.setBackground(new java.awt.Color(0, 204, 255));
+        pnBorder2.setBackground(new java.awt.Color(255, 255, 255));
+        pnBorder2.setBorder(javax.swing.BorderFactory.createTitledBorder("Danh sách khách hàng"));
 
         tblKH.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -226,11 +228,12 @@ public class Customview extends javax.swing.JFrame {
             pnBorder2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBorder2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        pnBorder3.setBackground(new java.awt.Color(0, 204, 255));
+        pnBorder3.setBackground(new java.awt.Color(255, 255, 255));
+        pnBorder3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblerro.setFont(new java.awt.Font("Tahoma", 3, 13)); // NOI18N
         lblerro.setForeground(new java.awt.Color(255, 0, 0));
@@ -238,8 +241,9 @@ public class Customview extends javax.swing.JFrame {
 
         btnS.setBackground(new java.awt.Color(255, 255, 255));
         btnS.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/update_35_gradian.png"))); // NOI18N
         btnS.setText("Sửa");
-        btnS.setBorder(null);
+        btnS.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSActionPerformed(evt);
@@ -248,8 +252,9 @@ public class Customview extends javax.swing.JFrame {
 
         btnX.setBackground(new java.awt.Color(255, 255, 255));
         btnX.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/delete_35_gradien.png"))); // NOI18N
         btnX.setText("Xóa");
-        btnX.setBorder(null);
+        btnX.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnXActionPerformed(evt);
@@ -258,8 +263,9 @@ public class Customview extends javax.swing.JFrame {
 
         btnexit.setBackground(new java.awt.Color(255, 255, 255));
         btnexit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/thoat_35.png"))); // NOI18N
         btnexit.setText("Thoát");
-        btnexit.setBorder(null);
+        btnexit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnexitActionPerformed(evt);
@@ -268,8 +274,9 @@ public class Customview extends javax.swing.JFrame {
 
         btnExcel.setBackground(new java.awt.Color(255, 255, 255));
         btnExcel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/excel_35.png"))); // NOI18N
         btnExcel.setText("Xuất excel");
-        btnExcel.setBorder(null);
+        btnExcel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExcelActionPerformed(evt);
@@ -278,8 +285,9 @@ public class Customview extends javax.swing.JFrame {
 
         btnReset.setBackground(new java.awt.Color(255, 255, 255));
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/quay_lai_35.png"))); // NOI18N
         btnReset.setText("Nhập lại");
-        btnReset.setBorder(null);
+        btnReset.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
@@ -288,8 +296,9 @@ public class Customview extends javax.swing.JFrame {
 
         btnT.setBackground(new java.awt.Color(255, 255, 255));
         btnT.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add_35_gradian.png"))); // NOI18N
         btnT.setText("Thêm");
-        btnT.setBorder(null);
+        btnT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTActionPerformed(evt);
@@ -308,12 +317,12 @@ public class Customview extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pnBorder3Layout.createSequentialGroup()
                         .addComponent(btnT, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
                         .addComponent(btnS, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(178, 178, 178)
                         .addComponent(btnX, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(194, 194, 194)
-                        .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(156, 156, 156)
+                        .addComponent(btnExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(170, 170, 170)
                         .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(179, 179, 179)))
@@ -350,56 +359,57 @@ public class Customview extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel1.setText("QUẢN LÝ KHÁCH HÀNG");
 
-        pnBorder5.setBackground(new java.awt.Color(0, 204, 255));
+        pnBorder5.setBackground(new java.awt.Color(255, 255, 255));
+        pnBorder5.setBorder(javax.swing.BorderFactory.createTitledBorder("Chi tiết khách hàng"));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Họ và tên:");
 
         txtemail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtemail.setBorder(null);
+        txtemail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Ngày sinh:");
 
         txtDC.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtDC.setBorder(null);
+        txtDC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Giới tính:");
 
         rdoNam.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        rdoNam.setForeground(new java.awt.Color(255, 255, 255));
+        rdoNam.setForeground(new java.awt.Color(51, 51, 51));
         rdoNam.setText("Nam");
         rdoNam.setOpaque(false);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Số điện thoại:");
 
         rdoNu.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        rdoNu.setForeground(new java.awt.Color(255, 255, 255));
+        rdoNu.setForeground(new java.awt.Color(51, 51, 51));
         rdoNu.setText("Nữ");
         rdoNu.setOpaque(false);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("CMND:");
 
         txtNgaySinh.setDateFormatString("yyyy/MM/dd");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Email:");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Địa chỉ:");
 
         txtMaKH.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtMaKH.setBorder(null);
+        txtMaKH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtMaKH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMaKHActionPerformed(evt);
@@ -407,10 +417,10 @@ public class Customview extends javax.swing.JFrame {
         });
 
         txtTenKH.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtTenKH.setBorder(null);
+        txtTenKH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtSDT.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtSDT.setBorder(null);
+        txtSDT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtSDT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSDTActionPerformed(evt);
@@ -418,11 +428,11 @@ public class Customview extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Mã khách hàng:");
 
         txtCMND.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtCMND.setBorder(null);
+        txtCMND.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout pnBorder5Layout = new javax.swing.GroupLayout(pnBorder5);
         pnBorder5.setLayout(pnBorder5Layout);
@@ -448,8 +458,7 @@ public class Customview extends javax.swing.JFrame {
                             .addGroup(pnBorder5Layout.createSequentialGroup()
                                 .addComponent(rdoNam)
                                 .addGap(44, 44, 44)
-                                .addComponent(rdoNu)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(rdoNu))
                             .addComponent(txtNgaySinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(288, 288, 288)
                 .addGroup(pnBorder5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -518,28 +527,28 @@ public class Customview extends javax.swing.JFrame {
                 .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(pnBorder1Layout.createSequentialGroup()
-                .addGap(475, 475, 475)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(pnBorder1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnBorder3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnBorder5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnBorder2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(pnBorder1Layout.createSequentialGroup()
+                .addGap(742, 742, 742)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnBorder1Layout.setVerticalGroup(
             pnBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnBorder1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addGroup(pnBorder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(pnBorder2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pnBorder2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnBorder5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
