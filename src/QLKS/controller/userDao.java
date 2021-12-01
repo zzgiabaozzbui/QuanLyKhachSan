@@ -129,6 +129,20 @@ public class userDao implements Dao<taikhoan>{
         so=doiPQ(so)+" :";
         return so;
     }
+    public String getKhoa(String ma) {
+        String so = "";
+        try {
+            String sql_select = "SELECT TrangThai FROM dangnhap WHERE MaNV = '"+ma+"'";
+            PreparedStatement ps = conn.prepareStatement(sql_select);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {     
+                so = String.valueOf(rs.getInt("TrangThai"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return so;
+    }
     public int getTong() {
         int so = 0;
         try {

@@ -189,12 +189,12 @@ public class ChartTaiKhoan extends javax.swing.JFrame {
         listbp.add("1");
         listbp.add("2");
         listbp.add("3");
-        //Lay tong nhan vien
+        //Lay tong nhan vien đã có tài khoản
         float c = (float) bp.getTong();
         float b=0;
         DefaultPieDataset dataset = new DefaultPieDataset();
         for (String object : listbp) {
-            //Lây so nhan vien trong 1 bo phân
+            //Lây so nhan vien trong 1 tai khoan
             b = bp.getCount(object);
             float a = (float) ((b/c));
             //làm tròn đên so thư 2 sau dấu phây

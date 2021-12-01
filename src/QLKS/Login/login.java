@@ -337,6 +337,7 @@ public class login extends javax.swing.JFrame {
         
         staff st = staffd.getnv(ma);
         String chucvu = userd.getQuyen(ma);
+        String tt = userd.getKhoa(ma);
         String ten = st.getTenNV();
         PropertiesNVNow pr = new PropertiesNVNow();
         System.out.println(chucvu);
@@ -347,13 +348,17 @@ public class login extends javax.swing.JFrame {
         String userName = txtUsername.getText();
         String password = new String(txtPassword.getPassword());
         if (usd.checkLogin(userName, password)) {
-            if (cboRemember.isSelected()) {
+            if(tt.equals("1")){
+                if (cboRemember.isSelected()) {
                 propertiesUtil.addRemember(userName, password);
-            } else {
-                propertiesUtil.removeRemember();
-            }
-            this.dispose();
-            h.setVisible(rootPaneCheckingEnabled);
+                } else {
+                    propertiesUtil.removeRemember();
+                }
+                this.dispose();
+                h.setVisible(rootPaneCheckingEnabled);
+            }else
+                JOptionPane.showMessageDialog(rootPane, "Tài khoản này đã bị khóa! Vui lòng liên hệ admin.");
+            
         } else {
             JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu không đúng.");
         }

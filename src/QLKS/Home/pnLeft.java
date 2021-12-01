@@ -920,7 +920,7 @@ public class pnLeft extends javax.swing.JPanel {
         h.dispose();
         new TraPhong().setVisible(true);
     }//GEN-LAST:event_btnTraPhongMouseClicked
-
+    //Khi muốn vẽ 1 hình gì chúng ta dùng đến đối tượng Graphics, đối tượng Graphics như cây cọ phết lên Frame
      @Override
     protected void paintComponent(Graphics grp){
         Graphics2D g2 =(Graphics2D) grp;
@@ -933,6 +933,7 @@ public class pnLeft extends javax.swing.JPanel {
         g2.setPaint(g);
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
         g2.fillRect(0, 0, getWidth(), getHeight());
+        //super.paintComponent(g); cho phép gọi hàm paintComponent(g) của ớp cha mà nó kế thừa. Cụ thể ở đây là JFram(hoặc Frame/…)
         super.paintComponent(grp);
         
     }
