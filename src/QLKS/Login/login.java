@@ -331,6 +331,7 @@ public class login extends javax.swing.JFrame {
     public bophanDao bpd = new bophanDao();
     public userDao userd = new userDao();
     public static String maNhanVien;
+    int dn = 5;
     private void btnLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseClicked
         
         String ma = usd.getmaNV(txtUsername.getText());
@@ -341,27 +342,39 @@ public class login extends javax.swing.JFrame {
         String ten = st.getTenNV();
         PropertiesNVNow pr = new PropertiesNVNow();
         System.out.println(chucvu);
-        pr.addRemember(ma, chucvu, ten);
+        
         maNhanVien=ma;
         System.out.println(usd.getmaNV(txtUsername.getText()));
         PropertiesUtil propertiesUtil = new PropertiesUtil();
         String userName = txtUsername.getText();
         String password = new String(txtPassword.getPassword());
-        if (usd.checkLogin(userName, password)) {
+        if (usd.checkt(userName)) {
             if(tt.equals("1")){
-                if (cboRemember.isSelected()) {
-                propertiesUtil.addRemember(userName, password);
+                pr.addRemember(ma, chucvu, ten);
+                if (usd.checkLogin(userName, password)) {
+
+                        if (cboRemember.isSelected()) {
+                        propertiesUtil.addRemember(userName, password);
+                        } else {
+                            propertiesUtil.removeRemember();
+                        }
+                        this.dispose();
+                        dn=5;
+                        h.setVisible(rootPaneCheckingEnabled);
+
+
                 } else {
-                    propertiesUtil.removeRemember();
+                    JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu không đúng.");
+                    dn--;
+                    JOptionPane.showMessageDialog(rootPane, "Bạn còn "+dn +" lần đăng nhập.");
+                    if(dn==0){
+                        userd.khoa(ma);
+                    }
                 }
-                this.dispose();
-                h.setVisible(rootPaneCheckingEnabled);
             }else
-                JOptionPane.showMessageDialog(rootPane, "Tài khoản này đã bị khóa! Vui lòng liên hệ admin.");
-            
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu không đúng.");
-        }
+                    JOptionPane.showMessageDialog(rootPane, "Tài khoản này đã bị khóa! Vui lòng liên hệ admin.");
+        }else
+                JOptionPane.showMessageDialog(rootPane, "Tài khoản không tồn tại.");
     }//GEN-LAST:event_btnLoginMouseClicked
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed

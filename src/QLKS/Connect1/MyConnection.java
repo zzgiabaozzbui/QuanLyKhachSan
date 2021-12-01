@@ -15,10 +15,10 @@ import java.sql.DriverManager;
  */
 public class MyConnection {
     String hostName="localhost";
-        String dbName="qlks";
-        String userName="root";
-        String passWord="";
-        String connectionURL="jdbc:mysql://"+hostName+":3306/"+dbName;
+    String dbName="qlks";
+    String userName="root";
+    String passWord="";
+    String connectionURL="jdbc:mysql://"+hostName+":3306/"+dbName;
     private static MyConnection instant;
 
     private  MyConnection() {

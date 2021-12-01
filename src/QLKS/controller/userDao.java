@@ -52,7 +52,20 @@ public class userDao implements Dao<taikhoan>{
         }
         return false;
     }
-
+    public boolean checkt(String username){
+        try {
+            String sql_select = "SELECT * FROM "+TABLE_NAME+" WHERE "+USERNAME_FIELD+" = ? ";
+            PreparedStatement ps = conn.prepareStatement(sql_select);
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {    
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
    public int PQ(String ma) {
         int so = 0;
         try {
@@ -301,7 +314,21 @@ public class userDao implements Dao<taikhoan>{
         }
         return 0;
     }
-
+    public int khoa(String t) {
+        try {
+            String sql_update = "UPDATE "+TABLE_NAME+" SET  "+TRANGTHAI_FIELD+"  = 0 WHERE MaNV = ? ";
+            PreparedStatement ps = conn.prepareStatement(sql_update);
+            
+            ps.setString(1, t);
+            int k = ps.executeUpdate();
+            if (k > 0) {
+                return 1;
+            } 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
     @Override
     public int delete(taikhoan t) {
         try {
