@@ -29,7 +29,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static javafx.util.Duration.millis;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -48,7 +47,7 @@ public class Customview extends javax.swing.JFrame {
      */
     public Customview(){
         initComponents();
-        
+        setExtendedState(MAXIMIZED_BOTH);
         
         long millis=System.currentTimeMillis();   
         java.sql.Date date=new java.sql.Date(millis);   
